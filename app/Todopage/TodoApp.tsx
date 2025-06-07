@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import styles from './TodoApp.module.css';
 
 interface Todo {
   id: number;
@@ -29,9 +30,7 @@ export default function TodoApp() {
     try {
       const res = await fetch('/api/todos', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title: newTitle }),
       });
       if (!res.ok) {
@@ -48,26 +47,32 @@ export default function TodoApp() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', padding: 20 }}>
-      <h2>To-Do List</h2>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.title} {todo.completed ? '(done)' : ''}
-          </li>
-        ))}
-      </ul>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>📝 My To-Do List</h2>
+
       <input
         type="text"
         value={newTitle}
         onChange={(e) => setNewTitle(e.target.value)}
-        placeholder="New to-do title"
-        style={{ width: '100%', padding: 8, marginBottom: 8 }}
+        placeholder="Enter a new task"
+        className={styles.input}
       />
-      <button onClick={addTodo} style={{ padding: '8px 16px' }}>
-        Add To-Do
+      <button onClick={addTodo} className={styles.button}>
+        ➕ Add To-Do
       </button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {error && <p className={styles.error}>{error}</p>}
+
+      <ul className={styles.todoList}>
+        {todos.map((todo) => (
+          <li
+            key={todo.id}
+            className={`${styles.todoItem} ${todo.completed ? styles.completed : ''}`}
+          >
+            {todo.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

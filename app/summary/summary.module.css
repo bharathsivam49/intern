@@ -1,0 +1,64 @@
+/* app/summary/Summary.module.css */
+
+.container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f9f9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+
+.container h2 {
+  font-size: 28px;
+  color: #1e1e2f;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d0d0dd;
+  padding-bottom: 10px;
+}
+
+.container h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  color: #3c3c4e;
+}
+
+.container p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.container ul,
+.container ol {
+  padding-left: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.container li {
+  margin-bottom: 10px;
+}
+
+.container strong {
+  font-weight: 600;
+}
+
+.container code {
+  background-color: #e8e8f0;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 4px;
+}
+
+.container a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
