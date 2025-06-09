@@ -17,7 +17,7 @@ export default function Home() {
             🔄 Node Sync View
           </Link>
 
-          <Link href="/chat" className={styles.button} style={{ color: "#16A34A" }}>
+          <Link href="/chatbox" className={styles.button} style={{ color: "#16A34A" }}>
              🤖 AI Chat Assistant
           </Link>
 

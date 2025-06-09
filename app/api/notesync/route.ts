@@ -1,7 +1,7 @@
 // app/api/notesync/list-notes/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { listNotes } from '@/packages/integration/notion/notesync/notesync.function.ts';
-import { listNotesSchema } from '@/packages/integration/notion/notesync/notesync.schema.ts';
+import { listNotes } from '@/packages/integration/notion/notesync/notesync.function';
+import { listNotesSchema } from '@/packages/integration/notion/notesync/notesync.schema';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
